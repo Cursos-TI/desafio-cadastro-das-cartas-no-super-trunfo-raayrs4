@@ -1,5 +1,15 @@
 #include <stdio.h>
 
+float calcularDensidadePopulacional(int numeroPopulacao, float area)
+{
+  return (float)numeroPopulacao / area;
+}
+
+float calcularPIBPerCapita(float PIB, int numeroPopulacao)
+{
+  return PIB / (float)numeroPopulacao;
+}
+
 int main()
 {
 
@@ -34,6 +44,9 @@ int main()
   printf("Digite a quantidade de pontos turísticos na cidade: \n");
   scanf("%d", &numeroPontosTuristicos1);
 
+  float densidadePopulacional1 = calcularDensidadePopulacional(numeroPopulacao1, area1);
+  float PIBPerCapita1 = calcularPIBPerCapita(PIB1, numeroPopulacao1);
+
   printf("\n");
 
   printf("Digite os dados da segunda carta:\n");
@@ -59,6 +72,9 @@ int main()
   printf("Digite a quantidade de pontos turísticos na cidade: \n");
   scanf("%d", &numeroPontosTuristicos2);
 
+  float densidadePopulacional2 = calcularDensidadePopulacional(numeroPopulacao2, area2);
+  float PIBPerCapita2 = calcularPIBPerCapita(PIB2, numeroPopulacao2);
+
   printf("\n--- Carta 1 ---\n");
   printf("Estado: %c \n", estado1);
   printf("Código: %s \n", codigo1);
@@ -67,6 +83,8 @@ int main()
   printf("Área: %.2f \n", area1);
   printf("PIB: %.2f \n", PIB1);
   printf("Número de Pontos Turísticos: %d \n", numeroPontosTuristicos1);
+  printf("Densidade populacional: %.2f hab/km² \n", densidadePopulacional1);
+  printf("PIB per capita: %.2f\n", PIBPerCapita1);
 
   printf("\n--- Carta 2 ---\n");
   printf("Estado: %c \n", estado2);
@@ -76,6 +94,8 @@ int main()
   printf("Área: %.2f \n", area2);
   printf("PIB: %.2f \n", PIB2);
   printf("Número de Pontos Turísticos: %d \n", numeroPontosTuristicos2);
+  printf("Densidade populacional: %.2f hab/km² \n", densidadePopulacional2);
+  printf("PIB per capita: %.2f\n", PIBPerCapita2);
 
   return 0;
 }
